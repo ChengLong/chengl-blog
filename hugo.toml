@@ -1,0 +1,14 @@
+baseURL = "https://chengl.com/"
+languageCode = "en-us"
+title = "Random Musings"
+theme = "casper"
+paginate = 10
+copyright = "Cheng Long"
+canonifyurls = true
+
+[params]
+  description = "Random Musings by Cheng Long"
+  cover = "/content/images/2020/07/IMG_1448.jpg"
+  author = "Cheng Long"
+  logo = ""
+  hideHUGOSupport = false

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bundler on Random Musings</title>
+    <link>http://localhost:1313/tags/bundler/</link>
+    <description>Recent content in Bundler on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 08:37:55 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/bundler/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speed up bundle install</title>
+      <link>http://localhost:1313/post/speed-up-bundle-install/</link>
+      <pubDate>Sat, 04 Apr 2015 08:36:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/speed-up-bundle-install/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Next time, when you need &lt;code&gt;bundle install&lt;/code&gt;, do &lt;code&gt;bundle install --jobs X&lt;/code&gt;, where &lt;strong&gt;X&lt;/strong&gt; is the number of your machine cores. It will save you huge amount of time.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://archlever.blogspot.sg/2013/09/lies-damned-lies-and-truths-backed-by.html&#34;&gt;Some blog&lt;/a&gt; suggests that setting the number of jobs to &lt;strong&gt;X-1&lt;/strong&gt; is statistically better than &lt;strong&gt;X&lt;/strong&gt;. But that is not true anymore, at least with bundler &amp;gt;= 1.7.12. To prove this, I tested it on a large Rails project (&lt;a href=&#34;https://github.com/discourse/discourse&#34;&gt;discourse&lt;/a&gt;) on my Mid 2012 MBP with 2.6 GHz Intel Core i7. Below is my test result:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

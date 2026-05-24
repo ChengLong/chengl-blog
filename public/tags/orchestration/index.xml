@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orchestration on Random Musings</title>
+    <link>http://localhost:1313/tags/orchestration/</link>
+    <description>Recent content in Orchestration on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 15:57:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/orchestration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orchestrating Docker with Kubernetes</title>
+      <link>http://localhost:1313/post/orchestrating-docker-with-kubernetes/</link>
+      <pubDate>Sun, 15 May 2016 09:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/orchestrating-docker-with-kubernetes/</guid>
+      <description>&lt;p&gt;This is my second post on Docker orchestration. In &lt;a href=&#34;https://chengl.com/orchestrating-docker-using-swarm/&#34;&gt;the first post&lt;/a&gt;, I demonstrated orchestrating Docker with Swarm, Machine, Compose and Consul. This post is to demonstrate orchestrating the same app with Kubernetes and draw comparisons between them. I recommend reading &lt;a href=&#34;https://chengl.com/orchestrating-docker-using-swarm/&#34;&gt;that post&lt;/a&gt; before this.&lt;/p&gt;&#xA;&lt;h3 id=&#34;introduction-to-kubernetes&#34;&gt;Introduction to Kubernetes&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Kubernetes is an open-source system for automating deployment, operations, and scaling of containerized applications.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon &lt;a href=&#34;http://queue.acm.org/detail.cfm?id=2898444&#34;&gt;a decade and a half of experience of running production workloads at Google&lt;/a&gt;, combined with best-of-breed ideas and practices from the community.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Orchestrating Docker with Swarm, Machine, Compose and Consul</title>
+      <link>http://localhost:1313/post/orchestrating-docker-using-swarm/</link>
+      <pubDate>Fri, 15 Apr 2016 09:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/orchestrating-docker-using-swarm/</guid>
+      <description>&lt;p&gt;With &lt;a href=&#34;https://blog.docker.com/2015/11/docker-multi-host-networking-ga/&#34;&gt;multi-host networking ready for production&lt;/a&gt; and &lt;a href=&#34;https://blog.docker.com/2015/11/swarm-1-0/&#34;&gt;the announcement of Swarm 1.0&lt;/a&gt;, I think it&amp;rsquo;s time to give Docker a serious try. This post details the steps I took to orchestrate a multi-host and multi-container app.&lt;/p&gt;&#xA;&lt;h3 id=&#34;architecture&#34;&gt;Architecture&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/content/images/2017/07/Screen-Shot-2016-04-15-at-12-57-55-AM.png&#34; alt=&#34;Screen-Shot-2016-04-15-at-12-57-55-AM&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a simple Node app that uses Redis as database, load balanced by Nginx. Each blue box is a Docker host, which runs several containers. All hosts talk to Consul for service discovery. The cluster has 5 nodes, each serves a specific purpose. We want to easily scale up and down the number of &lt;code&gt;app&lt;/code&gt; containers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

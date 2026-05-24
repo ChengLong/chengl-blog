@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    <meta name="twitter:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+    
+
+
+
+<meta name="twitter:title" content="Random Musings"/>
+<meta name="twitter:description" content="Random Musings by Cheng Long"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Random Musings" />
+  	<meta property="og:site_name" content="Random Musings" />
+  	<meta property="og:url" content="http://localhost:1313/" />
+
+    
+        
+            <meta property="og:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Random Musings by Cheng Long" />
+    
+
+    <title>Random Musings</title>
+
+    
+    <meta name="description" content="Random Musings by Cheng Long" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+
+    
+
+    
+
+    
+      
+      
+        <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Random Musings" />
+      
+    
+    <meta name="generator" content="Hugo 0.161.1">
+
+    <link rel="canonical" href="http://localhost:1313/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "http://localhost:1313/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:1313/"
+    },
+    "description": "Random Musings by Cheng Long"
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	 
+  <header class="main-header tag-head" style="background-image: url(/content/images/2020/07/IMG_1448.jpg)">
+  
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href="http://localhost:1313/index.xml">&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Random Musings</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 2</span>
+	
+	    <a class="older-posts" href="http://localhost:1313/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/lets-encrypt-intranet/">Let&#39;s Encrypt Intranet</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p><a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a> (LE) has been a popular choice to get certs for public websites. Because it&rsquo;s free and automated. But how to get certs for <strong>private</strong> websites, which are common in company&rsquo;s intranet?</p>
+<h2 id="problem">Problem</h2>
+<ul>
+<li>There&rsquo;s a web app in your company&rsquo;s intranet.</li>
+<li>The web app has a fully qualified domain name (FQDN), e.g. <strong>foo.example.com</strong>, not an internal one like <strong>foo.internal</strong>.</li>
+<li>It only resolves to a private IP behind VPN. Therefore, it&rsquo;s inaccessible without a valid VPN.</li>
+<li>You want to add an extra layer of security by enabling HTTPS.</li>
+</ul>
+<p>How to get a cert for it? And how to automate it and get it for free?</p> <a class="read-more" href="http://localhost:1313/post/lets-encrypt-intranet/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/lets-encrypt/">#Let&#39;s Encrypt</a>,
+            
+                <a href="http://localhost:1313//tags/intranet/">#Intranet</a>,
+            
+                <a href="http://localhost:1313//tags/https/">#HTTPS</a>,
+            
+        
+        <time class="post-date" datetime="2017-09-03T14:33:24Z">
+            3 Sep 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/multirepo-vs-monorepo/">Multirepo vs Monorepo</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Here&rsquo;s a conversion I keep hearing recently:</p>
+<blockquote>
+<p>A: Let&rsquo;s put all our projects in one repo.</p>
+<p>B: Why?</p>
+<p>A: Because Google and Facebook do monorepo.</p>
+</blockquote>
+<p>Whenever I hear this, I&rsquo;m very tempted to show this picture.</p>
+<p><img src="http://localhost:1313/content/images/2017/07/JohnFrumCrossTanna1967-1.jpg" alt="JohnFrumCrossTanna1967-1"></p>
+<p>Finding the origin of this picture is left as an exercise for the readers. On a more serious note, I want to write down my thoughts on multirepo vs monorepo.</p>
+<h2 id="what-is-multirepo">What is multirepo?</h2>
+<p>One project one repository. Each project is an independent working unit. It can be a mobile app, frontend app, backend service or standalone CLI app.</p> <a class="read-more" href="http://localhost:1313/post/multirepo-vs-monorepo/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/monorepo/">#monorepo</a>,
+            
+                <a href="http://localhost:1313//tags/multirepo/">#multirepo</a>,
+            
+        
+        <time class="post-date" datetime="2017-07-20T09:32:00Z">
+            20 Jul 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/be-wary-of-go-http-client/">Be wary of  http/client.go</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Recently, I found out an interesting problem in Go. The problem can be reduced to a simple client request to a HTTP server.</p>
+<p>Suppose we have a HTTP server, which serves only one rooted path <code>/foo/</code>.</p>
+<pre><code>package main
+
+import (
+	&quot;io&quot;
+	&quot;log&quot;
+	&quot;net/http&quot;
+	&quot;net/http/httputil&quot;
+)
+
+func handleFoo(w http.ResponseWriter, req *http.Request) {
+	// request details
+	dump, _ := httputil.DumpRequest(req, true)
+	log.Println(string(dump))
+
+	if auth := req.Header.Get(&quot;Authorization&quot;); auth != &quot;Bearer GoodToken&quot; {
+		http.Error(w, &quot;401 Unauthorized&quot;, http.StatusUnauthorized)
+		return
+	}
+
+	io.WriteString(w, &quot;Hello World!&quot;)
+}
+
+func main() {
+	http.HandleFunc(&quot;/foo/&quot;, handleFoo)
+	log.Fatal(http.ListenAndServe(&quot;:12345&quot;, nil))
+}
+</code></pre>
+<p><code>handleFoo</code> simplily verifies that correct token is sent in the <code>Authorization</code> header. Otherwise, it returns <code>401 Unauthorized</code>.</p> <a class="read-more" href="http://localhost:1313/post/be-wary-of-go-http-client/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/http/">#HTTP</a>,
+            
+                <a href="http://localhost:1313//tags/go/">#Go</a>,
+            
+        
+        <time class="post-date" datetime="2017-03-25T09:30:00Z">
+            25 Mar 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/working-with-multiple-projects-on-gke/">Keeping configurations sane for multiple projects on Google Container Engine</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>In my <a href="https://chengl.com/kubectl-authentication-made-simple/">previous post</a>, I present the easist and most secure way to get <code>kubectl</code> working for one project. But what about mutiple projects? Juggle mutiple projects on Google Container Engine (GKE) can be hard, especially when its configurations are admittedly <a href="https://github.com/kubernetes/kubernetes/issues/20605">quirky</a>. This post describes the best practice, in my opinion, to keep configurations sane and easy to switch.</p>
+<h2 id="problem">Problem</h2>
+<p>Suppose you have an awesome app that runs on GKE. You probably want to have two different environments <code>staging</code> and <code>production</code>, and the environments should be completely isolated. So you create two projects on GKE, <code>awesome-app-staging</code> and <code>awesome-app-production</code>, and provisioned resources for each. Now the question is how to effectively switch between the two projects on command line without repeating <a href="https://github.com/kubernetes/kubernetes/issues/20605#issuecomment-218322105">these commands</a> over and over again.</p> <a class="read-more" href="http://localhost:1313/post/working-with-multiple-projects-on-gke/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/kubernetes/">#Kubernetes</a>,
+            
+                <a href="http://localhost:1313//tags/gke/">#GKE</a>,
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+        
+        <time class="post-date" datetime="2017-02-18T09:27:00Z">
+            18 Feb 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/kubectl-authentication-made-simple/">kubectl Authentication Made Simple</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>While working on a continuous delivery pipeline to automate deployment to Google Container Engine (GKE), I found that getting <code>kubectl</code> to work is very <a href="https://kubernetes.io/docs/user-guide/sharing-clusters/#manually-generating-kubeconfig">complex</a><a href="http://stackoverflow.com/questions/40426071/kubectl-access-to-google-cloud-container-engins-fails">and</a><a href="http://stackoverflow.com/questions/40408321/whats-the-cli-authentication-process-as-of-google-container-engine-kubernetes-1">convoluted</a>, especially when it needs to be <a href="https://circleci.com/docs/continuous-deployment-with-google-container-engine/">noninteractive</a>. So I want to find out the easiest way to get <code>kubectl</code> working noninteractively.</p>
+<p>Assuming that <code>gcloud</code> and <code>kubectl</code> are already installed but not necessarily setup, <strong>ONLY</strong> two commands are needed to get <code>kubectl</code> working noninteractively (verified with Google Cloud SDK 141.0.0 and kubectl 1.5.2)</p> <a class="read-more" href="http://localhost:1313/post/kubectl-authentication-made-simple/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/kubernetes/">#Kubernetes</a>,
+            
+                <a href="http://localhost:1313//tags/kubectl/">#kubectl</a>,
+            
+                <a href="http://localhost:1313//tags/continuous-delivery/">#Continuous Delivery</a>,
+            
+        
+        <time class="post-date" datetime="2017-01-30T09:25:00Z">
+            30 Jan 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/speed-up-ssh/">Speed Up SSH</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>Recently I worked on a project where executing remote commands is very slow to start. This is expected because an SSH connection has to be established first.</p>
+<pre><code>$ time ssh server exit
+ssh server exit  0.04s user 0.01s system 0% cpu 7.901 total
+</code></pre>
+<p>It took nearly <strong>8</strong> seconds to ssh into <code>server</code>.</p>
+<p>That&rsquo;s slow!</p>
+<p>After a bit of googling, there is an elegant way to speed this up. Simply put this at the bottom of your <code>~/.ssh/config</code>.</p> <a class="read-more" href="http://localhost:1313/post/speed-up-ssh/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/ssh/">#ssh</a>,
+            
+        
+        <time class="post-date" datetime="2016-12-04T09:23:00Z">
+            4 Dec 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/ruby-and-java-stack-level/">Ruby and Java Stack Level</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>While coding for an algorithmic problem, I discovered that Ruby&rsquo;s stack level is much shallower than Java. This caused a recursive DFS solution written in Ruby failed due to <code>stack level too deep (SystemStackError)</code>, while the same code written in Java passed. Whether recursion or tail recursion should be used is not the point of this post. This post is to find out what the max stack level is and what limits the stack level.</p> <a class="read-more" href="http://localhost:1313/post/ruby-and-java-stack-level/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/ruby/">#Ruby</a>,
+            
+                <a href="http://localhost:1313//tags/java/">#Java</a>,
+            
+                <a href="http://localhost:1313//tags/recursion/">#recursion</a>,
+            
+        
+        <time class="post-date" datetime="2016-11-05T09:17:00Z">
+            5 Nov 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/docker-workflow/">Docker Workflow</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>In my previous posts, I demoed how to orchestrate Docker with <a href="https://chengl.com/orchestrating-docker-using-swarm/">Swarm</a> and <a href="https://chengl.com/orchestrating-docker-with-kubernetes/">Kubernetes</a>. They all assume the Docker image <a href="https://hub.docker.com/r/chenglong/simple-node/">chenglong/simple-node</a> is already there and ready to be deployed. But how to develop that image in the first place? How to streamline and automate the process of developing it on local machine, building and testing it on Continuous Integration (CI) server, and finally deploying to production?</p>
+<p>This post introduces one possible Docker workflow.</p> <a class="read-more" href="http://localhost:1313/post/docker-workflow/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/workflow/">#Workflow</a>,
+            
+                <a href="http://localhost:1313//tags/continuous-integration/">#Continuous Integration</a>,
+            
+                <a href="http://localhost:1313//tags/continuous-delivery/">#Continuous Delivery</a>,
+            
+        
+        <time class="post-date" datetime="2016-05-25T09:07:00Z">
+            25 May 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/orchestrating-docker-with-kubernetes/">Orchestrating Docker with Kubernetes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>This is my second post on Docker orchestration. In <a href="https://chengl.com/orchestrating-docker-using-swarm/">the first post</a>, I demonstrated orchestrating Docker with Swarm, Machine, Compose and Consul. This post is to demonstrate orchestrating the same app with Kubernetes and draw comparisons between them. I recommend reading <a href="https://chengl.com/orchestrating-docker-using-swarm/">that post</a> before this.</p>
+<h3 id="introduction-to-kubernetes">Introduction to Kubernetes</h3>
+<blockquote>
+<p>Kubernetes is an open-source system for automating deployment, operations, and scaling of containerized applications.</p>
+</blockquote>
+<blockquote>
+<p>It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon <a href="http://queue.acm.org/detail.cfm?id=2898444">a decade and a half of experience of running production workloads at Google</a>, combined with best-of-breed ideas and practices from the community.</p> <a class="read-more" href="http://localhost:1313/post/orchestrating-docker-with-kubernetes/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/orchestration/">#Orchestration</a>,
+            
+                <a href="http://localhost:1313//tags/kubernetes/">#Kubernetes</a>,
+            
+        
+        <time class="post-date" datetime="2016-05-15T09:04:00Z">
+            15 May 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/orchestrating-docker-using-swarm/">Orchestrating Docker with Swarm, Machine, Compose and Consul</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>With <a href="https://blog.docker.com/2015/11/docker-multi-host-networking-ga/">multi-host networking ready for production</a> and <a href="https://blog.docker.com/2015/11/swarm-1-0/">the announcement of Swarm 1.0</a>, I think it&rsquo;s time to give Docker a serious try. This post details the steps I took to orchestrate a multi-host and multi-container app.</p>
+<h3 id="architecture">Architecture</h3>
+<p><img src="http://localhost:1313/content/images/2017/07/Screen-Shot-2016-04-15-at-12-57-55-AM.png" alt="Screen-Shot-2016-04-15-at-12-57-55-AM"></p>
+<p>This is a simple Node app that uses Redis as database, load balanced by Nginx. Each blue box is a Docker host, which runs several containers. All hosts talk to Consul for service discovery. The cluster has 5 nodes, each serves a specific purpose. We want to easily scale up and down the number of <code>app</code> containers.</p> <a class="read-more" href="http://localhost:1313/post/orchestrating-docker-using-swarm/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/orchestration/">#Orchestration</a>,
+            
+                <a href="http://localhost:1313//tags/swarm/">#Swarm</a>,
+            
+                <a href="http://localhost:1313//tags/consul/">#Consul</a>,
+            
+        
+        <time class="post-date" datetime="2016-04-15T09:01:00Z">
+            15 Apr 2016
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 2</span>
+	
+	    <a class="older-posts" href="http://localhost:1313/page/2/">Older Posts &rarr;</a>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Random Musings</a> Cheng Long</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>

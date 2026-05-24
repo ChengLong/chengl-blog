@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Continuous Integration on Random Musings</title>
+    <link>http://localhost:1313/tags/continuous-integration/</link>
+    <description>Recent content in Continuous Integration on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 16:07:37 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/continuous-integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Workflow</title>
+      <link>http://localhost:1313/post/docker-workflow/</link>
+      <pubDate>Wed, 25 May 2016 09:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/docker-workflow/</guid>
+      <description>&lt;p&gt;In my previous posts, I demoed how to orchestrate Docker with &lt;a href=&#34;https://chengl.com/orchestrating-docker-using-swarm/&#34;&gt;Swarm&lt;/a&gt; and &lt;a href=&#34;https://chengl.com/orchestrating-docker-with-kubernetes/&#34;&gt;Kubernetes&lt;/a&gt;. They all assume the Docker image &lt;a href=&#34;https://hub.docker.com/r/chenglong/simple-node/&#34;&gt;chenglong/simple-node&lt;/a&gt; is already there and ready to be deployed. But how to develop that image in the first place? How to streamline and automate the process of developing it on local machine, building and testing it on Continuous Integration (CI) server, and finally deploying to production?&lt;/p&gt;&#xA;&lt;p&gt;This post introduces one possible Docker workflow.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTPS on Random Musings</title>
+    <link>http://localhost:1313/tags/https/</link>
+    <description>Recent content in HTTPS on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 05 Jul 2020 05:49:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s Encrypt Intranet</title>
+      <link>http://localhost:1313/post/lets-encrypt-intranet/</link>
+      <pubDate>Sun, 03 Sep 2017 14:33:24 +0000</pubDate>
+      <guid>http://localhost:1313/post/lets-encrypt-intranet/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt; (LE) has been a popular choice to get certs for public websites. Because it&amp;rsquo;s free and automated. But how to get certs for &lt;strong&gt;private&lt;/strong&gt; websites, which are common in company&amp;rsquo;s intranet?&lt;/p&gt;&#xA;&lt;h2 id=&#34;problem&#34;&gt;Problem&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;There&amp;rsquo;s a web app in your company&amp;rsquo;s intranet.&lt;/li&gt;&#xA;&lt;li&gt;The web app has a fully qualified domain name (FQDN), e.g. &lt;strong&gt;foo.example.com&lt;/strong&gt;, not an internal one like &lt;strong&gt;foo.internal&lt;/strong&gt;.&lt;/li&gt;&#xA;&lt;li&gt;It only resolves to a private IP behind VPN. Therefore, it&amp;rsquo;s inaccessible without a valid VPN.&lt;/li&gt;&#xA;&lt;li&gt;You want to add an extra layer of security by enabling HTTPS.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;How to get a cert for it? And how to automate it and get it for free?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

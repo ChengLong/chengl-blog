@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swarm on Random Musings</title>
+    <link>http://localhost:1313/tags/swarm/</link>
+    <description>Recent content in Swarm on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 09:03:09 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/swarm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Orchestrating Docker with Swarm, Machine, Compose and Consul</title>
+      <link>http://localhost:1313/post/orchestrating-docker-using-swarm/</link>
+      <pubDate>Fri, 15 Apr 2016 09:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/orchestrating-docker-using-swarm/</guid>
+      <description>&lt;p&gt;With &lt;a href=&#34;https://blog.docker.com/2015/11/docker-multi-host-networking-ga/&#34;&gt;multi-host networking ready for production&lt;/a&gt; and &lt;a href=&#34;https://blog.docker.com/2015/11/swarm-1-0/&#34;&gt;the announcement of Swarm 1.0&lt;/a&gt;, I think it&amp;rsquo;s time to give Docker a serious try. This post details the steps I took to orchestrate a multi-host and multi-container app.&lt;/p&gt;&#xA;&lt;h3 id=&#34;architecture&#34;&gt;Architecture&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/content/images/2017/07/Screen-Shot-2016-04-15-at-12-57-55-AM.png&#34; alt=&#34;Screen-Shot-2016-04-15-at-12-57-55-AM&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a simple Node app that uses Redis as database, load balanced by Nginx. Each blue box is a Docker host, which runs several containers. All hosts talk to Consul for service discovery. The cluster has 5 nodes, each serves a specific purpose. We want to easily scale up and down the number of &lt;code&gt;app&lt;/code&gt; containers.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

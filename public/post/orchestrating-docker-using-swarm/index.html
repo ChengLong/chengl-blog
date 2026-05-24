@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Orchestrating Docker with Swarm, Machine, Compose and Consul"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Orchestrating Docker with Swarm, Machine, Compose and Consul &middot; Random Musings" />
+  	<meta property="og:site_name" content="Random Musings" />
+  	<meta property="og:url" content="http://localhost:1313/post/orchestrating-docker-using-swarm/" />
+
+    
+        
+            <meta property="og:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2016-04-15T09:01:00Z" />
+
+    
+    <meta property="article:tag" content="Docker" />
+    
+    <meta property="article:tag" content="Orchestration" />
+    
+    <meta property="article:tag" content="Swarm" />
+    
+    <meta property="article:tag" content="Consul" />
+    
+    
+
+    <title>Orchestrating Docker with Swarm, Machine, Compose and Consul &middot; Random Musings</title>
+
+    
+    <meta name="description" content="&lt;p&gt;With &lt;a href=&#34;https://blog.docker.com/2015/11/docker-multi-host-networking-ga/&#34;&gt;multi-host networking ready for production&lt;/a&gt; and &lt;a href=&#34;https://blog.dock" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Random Musings" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.161.1">
+
+    <link rel="canonical" href="http://localhost:1313/post/orchestrating-docker-using-swarm/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Orchestrating Docker with Swarm, Machine, Compose and Consul",
+    "name": "Orchestrating Docker with Swarm, Machine, Compose and Consul",
+    "wordCount":  1016 ,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "http://localhost:1313/post/orchestrating-docker-using-swarm/",
+    "datePublished": "2016-04-15T09:01Z",
+    "dateModified": "2017-07-30T09:03Z",
+    
+    "keywords": "Docker, Orchestration, Swarm, Consul",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:1313/post/orchestrating-docker-using-swarm/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="http://localhost:1313/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Orchestrating Docker with Swarm, Machine, Compose and Consul</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-04-15T09:01:00Z">
+            Apr 15, 2016
+          </time>
+        
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/docker/">#Docker</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/orchestration/">#Orchestration</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/swarm/">#Swarm</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/consul/">#Consul</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>With <a href="https://blog.docker.com/2015/11/docker-multi-host-networking-ga/">multi-host networking ready for production</a> and <a href="https://blog.docker.com/2015/11/swarm-1-0/">the announcement of Swarm 1.0</a>, I think it&rsquo;s time to give Docker a serious try. This post details the steps I took to orchestrate a multi-host and multi-container app.</p>
+<h3 id="architecture">Architecture</h3>
+<p><img src="http://localhost:1313/content/images/2017/07/Screen-Shot-2016-04-15-at-12-57-55-AM.png" alt="Screen-Shot-2016-04-15-at-12-57-55-AM"></p>
+<p>This is a simple Node app that uses Redis as database, load balanced by Nginx. Each blue box is a Docker host, which runs several containers. All hosts talk to Consul for service discovery. The cluster has 5 nodes, each serves a specific purpose. We want to easily scale up and down the number of <code>app</code> containers.</p>
+<p>To achieve this, we will use the following stack</p>
+<ul>
+<li><a href="https://docs.docker.com/compose/">Docker Compose</a> &gt;= 1.6</li>
+<li><a href="https://docs.docker.com/machine/">Docker Machine</a> &gt;= 0.6</li>
+<li><a href="https://docs.docker.com/swarm/">Docker Swarm</a> &gt;= 1.0</li>
+<li><a href="https://hub.docker.com/r/progrium/consul/">Consul</a></li>
+<li><a href="https://hub.docker.com/r/gliderlabs/registrator/">Registrator</a></li>
+</ul>
+<p>All scripts and the compose file for this demo are available <a href="https://github.com/ChengLong/docker-orchestration-swarm-demo">here</a>.</p>
+<h4 id="1-create-and-run-consul">1. Create and Run Consul</h4>
+<p><a href="https://www.consul.io/">Consul</a> is an excellent tool for service discovery. It works great with Docker. You could also use <a href="https://github.com/coreos/etcd">etcd</a>.</p>
+<p>Let&rsquo;s create a Docker host for Consul</p>
+<pre><code>docker-machine create -d virtualbox consul
+</code></pre>
+<p>This will create a new Docker host named <code>consul</code> on my local virtualbox. It&rsquo;s certainly possible to create a Docker host on a supported cloud provider, e.g. AWS, Digital Ocean, Google Compute Engine, etc. The difference is the driver. Checkout <a href="https://docs.docker.com/machine/drivers/os-base/">driver options and arguments</a>.</p>
+<p>Once <code>consul</code> is created, connect to it</p>
+<pre><code>eval $(docker-machine env consul)
+</code></pre>
+<p>Run <a href="https://hub.docker.com/r/progrium/consul/">progrium/consul</a> in background.</p>
+<pre><code>docker run -d -p 8500:8500 -h consul --restart always gliderlabs/consul-server -bootstrap
+</code></pre>
+<p>Verify Consul is working</p>
+<pre><code>curl $(docker-machine ip consul):8500/v1/catalog/services
+</code></pre>
+<p>You can also go to Consul&rsquo;s web UI <code>http://$(docker-machine ip consul):8500/ui</code></p>
+<h4 id="2-create-the-swarm">2. Create The Swarm</h4>
+<p>Create the Swarm master</p>
+<pre><code>docker-machine create \
+    -d virtualbox \
+    --swarm \
+    --swarm-master \
+    --swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;\
+    --engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot; \
+    --engine-opt=&quot;cluster-advertise=eth1:2376&quot; \
+    swarm-master
+</code></pre>
+<p>This is a very long command. Let&rsquo;s take a detailed look.</p>
+<ul>
+<li><code>-d virtualbox</code> indicates the driver is virtualbox</li>
+<li><code>--swarm</code> configs the newly created machine with Swarm</li>
+<li><code>--swarm-master</code> dictates the newly created machine as the Swarm master</li>
+<li><code>--swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;</code> designates Consul as the discovery service</li>
+<li><code>--engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot;</code> designates Consul as the distributed KV storage backend for the cluster</li>
+<li><code>--engine-opt=&quot;cluster-advertise=eth1:2376&quot;</code> advertises the machine on the network</li>
+</ul>
+<p>Create a node for load balancer</p>
+<pre><code>docker-machine create \
+	-d virtualbox \
+    --swarm \
+    --swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;\
+    --engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot; \
+    --engine-opt=&quot;cluster-advertise=eth1:2376&quot; \
+    --engine-label host=load-balancer \
+    load-balancer
+</code></pre>
+<p>Note that we give this machine a label <code>host</code> with value <code>load-balancer</code>, which will be used for scheduling later.</p>
+<p>Create app server 1</p>
+<pre><code>docker-machine create \
+	-d virtualbox \
+    --swarm \
+    --swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;\
+    --engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot; \
+    --engine-opt=&quot;cluster-advertise=eth1:2376&quot; \
+    --engine-label host=app-server \
+    --virtualbox-cpu-count &quot;2&quot; \
+    --virtualbox-memory &quot;2048&quot; \
+    app-server-1
+</code></pre>
+<p>Note the two added parameters <code>--virtualbox-cpu-count &quot;2&quot;</code> and <code>--virtualbox-memory &quot;2048&quot;</code>, which gives the app server more resources. You should adjust these values according to your needs.</p>
+<p>Create app server 2</p>
+<pre><code>docker-machine create \
+	-d virtualbox \
+    --swarm \
+    --swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;\
+    --engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot; \
+    --engine-opt=&quot;cluster-advertise=eth1:2376&quot; \
+    --engine-label host=app-server \
+    --virtualbox-cpu-count &quot;2&quot; \
+    --virtualbox-memory &quot;2048&quot; \
+    app-server-2
+</code></pre>
+<p>It&rsquo;s best practice to put your app servers in different availability zones or even different cloud providers to achieve high availability. Checkout <a href="https://docs.docker.com/machine/drivers/">the drivers reference</a> for options.</p>
+<p>Create database node</p>
+<pre><code>docker-machine create \
+	-d virtualbox \
+    --swarm \
+    --swarm-discovery=&quot;consul://$(docker-machine ip consul):8500&quot;\
+    --engine-opt=&quot;cluster-store=consul://$(docker-machine ip consul):8500&quot; \
+    --engine-opt=&quot;cluster-advertise=eth1:2376&quot; \
+    --engine-label host=database \
+    --virtualbox-disk-size &quot;40000&quot; \
+    database
+</code></pre>
+<p>Note that we specify <code>--virtualbox-disk-size &quot;40000&quot;</code> because it&rsquo;s for running database. You can adjust this according to your needs.</p>
+<p>Connect to the Swarm</p>
+<pre><code>eval $(docker-machine env -swarm swarm-master)
+</code></pre>
+<p>Check cluster info</p>
+<pre><code>docker info
+</code></pre>
+<p>You should see 5 nodes in the cluster, namely <code>swarm-master</code>, <code>load-balancer</code>, <code>database</code>, <code>app-server-1</code> and <code>app-server-2</code>.</p>
+<p>You can also run</p>
+<pre><code>docker run --rm swarm list consul://$(docker-machine ip consul):8500
+</code></pre>
+<p>to find out all nodes in the cluster.</p>
+<h4 id="3-run-registrator-in-each-host">3. Run registrator in each host</h4>
+<p>To automatically register and deregister services for all Docker containers in each host, we need to run <a href="https://hub.docker.com/r/gliderlabs/registrator/">gliderlabs/registrator</a> in each node of the cluster. Registrator will also use Consul as the KV store.</p>
+<p>Run the following script</p>
+<p>After this, the infrastructure is ready. It&rsquo;s time to deploy.</p>
+<h4 id="4-docker-compose">4. Docker Compose</h4>
+<p>We will use the following compose file to start the app</p>
+<p>A few important points:</p>
+<ul>
+<li><a href="https://hub.docker.com/r/chenglong/nginx-consul-template/">chenglong/nginx-consul-template</a> is a simple image that use NGINX and <a href="https://github.com/hashicorp/consul-template">consul-template</a> to load balance any service as instructed. In this case, it&rsquo;s service <code>myapp</code>. It requires a running Consul for service discovery. <em>Environment variable <code>CONSUL_URL</code> should be set</em>.</li>
+<li><a href="https://hub.docker.com/r/chenglong/simple-node/">chenglong/simple-node</a> is a simple Node image that uses redis as database. All it does is to display the hostname and the number of times the page is visited.</li>
+<li><code>constraint:host==load-balancer</code>, <code>constraint:host==app-server</code> and <code>constraint:host==database</code> are <a href="https://docs.docker.com/swarm/scheduler/filter/">node filters</a> which tell the Swarm master to schedule the corresponding containers on matching hosts. So in this case, the <code>load-balancer</code> container will be scheduled to run on Docker host <code>load-balancer</code>. All <code>app</code> containers will be scheduled to run on either <code>app-server-1</code> or <code>app-server-2</code>.</li>
+<li>There are two <a href="https://docs.docker.com/engine/userguide/networking/get-started-overlay/">overlay networks</a><code>frontend</code> and <code>backend</code>. This is what makes multi-host networking possible, i.e. <code>load-balancer</code> can talk to <code>app</code> and <code>app</code> can talk to <code>redis</code>.</li>
+</ul>
+<p>Set <code>CONSUL_URL</code></p>
+<pre><code>export CONSUL_URL=$(docker-machine ip consul):8500
+</code></pre>
+<p>Start the app</p>
+<pre><code>docker-compose up -d
+</code></pre>
+<p>Verify that all containers are running</p>
+<pre><code>docker-compose ps
+</code></pre>
+<p>Test the app works by repeating <code>curl $(docker-machine ip load-balancer)</code> a few times. You should see the counter running.</p>
+<h4 id="5-scaling">5. Scaling</h4>
+<p>Now you can easily scale the number of <code>app</code> containers</p>
+<pre><code>docker-compose scale app=4
+</code></pre>
+<p>This creates 3 more <code>app</code> containers.</p>
+<p>By default, Swarm use <a href="https://docs.docker.com/swarm/scheduler/strategy/">spread</a> scheduling strategy. So all <code>app</code> containers will be shared evenly by <code>app-server-1</code> and <code>app-server-2</code>.</p>
+<p>Test load balancing works by repeating <code>curl $(docker-machine ip load-balancer)</code> a few times. You should see the hostname cycles the 4 containers and the counter is running.</p>
+<p>Scaling down is easy too</p>
+<pre><code>docker-compose scale app=2
+</code></pre>
+<h3 id="summary">Summary</h3>
+<p>With Docker Swarm, Machine, Compose and Consul, it&rsquo;s not hard to scale and schedule Docker containers to a cluster of nodes. Although I demoed with virtualbox, you could do the same with Digital Ocean, AWS or any supported cloud provider to deploy Swarm clusters for production.</p>
+<p>Since Swarm is native for Docker and it follows &ldquo;batteries included but swappable&rdquo; principle, I feel it&rsquo;s much more natural and easier to use than Kubernetes. I will try to do a post about Swarm vs Kubernetes in the near future.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="http://localhost:1313/">Cheng Long</a></h4>
+  
+  <p>Read <a href="http://localhost:1313/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Orchestrating%20Docker%20with%20Swarm%2c%20Machine%2c%20Compose%20and%20Consul&nbsp;-&nbsp;Random%20Musings&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2forchestrating-docker-using-swarm%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2forchestrating-docker-using-swarm%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fpost%2forchestrating-docker-using-swarm%2f&amp;description=Orchestrating%20Docker%20with%20Swarm%2c%20Machine%2c%20Compose%20and%20Consul"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fpost%2forchestrating-docker-using-swarm%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="background-image: url(/content/images/2017/07/Kubernetes_logo.jpg)" href="http://localhost:1313/post/orchestrating-docker-with-kubernetes/">
+          <section class="post">
+              <h2>Orchestrating Docker with Kubernetes</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="http://localhost:1313/post/gmail-sending-limit/">
+          <section class="post">
+              <h2>Gmail Sending Limit</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Random Musings</a> Cheng Long</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Random Musings</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 05 Jul 2020 05:49:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTPS</title>
+      <link>http://localhost:1313/tags/https/</link>
+      <pubDate>Sun, 03 Sep 2017 14:33:24 +0000</pubDate>
+      <guid>http://localhost:1313/tags/https/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Intranet</title>
+      <link>http://localhost:1313/tags/intranet/</link>
+      <pubDate>Sun, 03 Sep 2017 14:33:24 +0000</pubDate>
+      <guid>http://localhost:1313/tags/intranet/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Let&#39;s Encrypt</title>
+      <link>http://localhost:1313/tags/lets-encrypt/</link>
+      <pubDate>Sun, 03 Sep 2017 14:33:24 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lets-encrypt/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Monorepo</title>
+      <link>http://localhost:1313/tags/monorepo/</link>
+      <pubDate>Thu, 20 Jul 2017 09:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/monorepo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multirepo</title>
+      <link>http://localhost:1313/tags/multirepo/</link>
+      <pubDate>Thu, 20 Jul 2017 09:32:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/multirepo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>http://localhost:1313/tags/go/</link>
+      <pubDate>Sat, 25 Mar 2017 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP</title>
+      <link>http://localhost:1313/tags/http/</link>
+      <pubDate>Sat, 25 Mar 2017 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/http/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Sat, 18 Feb 2017 09:27:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GKE</title>
+      <link>http://localhost:1313/tags/gke/</link>
+      <pubDate>Sat, 18 Feb 2017 09:27:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gke/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubernetes</title>
+      <link>http://localhost:1313/tags/kubernetes/</link>
+      <pubDate>Sat, 18 Feb 2017 09:27:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Continuous Delivery</title>
+      <link>http://localhost:1313/tags/continuous-delivery/</link>
+      <pubDate>Mon, 30 Jan 2017 09:25:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/continuous-delivery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kubectl</title>
+      <link>http://localhost:1313/tags/kubectl/</link>
+      <pubDate>Mon, 30 Jan 2017 09:25:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/kubectl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ssh</title>
+      <link>http://localhost:1313/tags/ssh/</link>
+      <pubDate>Sun, 04 Dec 2016 09:23:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ssh/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Sat, 05 Nov 2016 09:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Recursion</title>
+      <link>http://localhost:1313/tags/recursion/</link>
+      <pubDate>Sat, 05 Nov 2016 09:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/recursion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>http://localhost:1313/tags/ruby/</link>
+      <pubDate>Sat, 05 Nov 2016 09:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ruby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Continuous Integration</title>
+      <link>http://localhost:1313/tags/continuous-integration/</link>
+      <pubDate>Wed, 25 May 2016 09:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/continuous-integration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>http://localhost:1313/tags/workflow/</link>
+      <pubDate>Wed, 25 May 2016 09:07:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/workflow/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orchestration</title>
+      <link>http://localhost:1313/tags/orchestration/</link>
+      <pubDate>Sun, 15 May 2016 09:04:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/orchestration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Consul</title>
+      <link>http://localhost:1313/tags/consul/</link>
+      <pubDate>Fri, 15 Apr 2016 09:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/consul/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Swarm</title>
+      <link>http://localhost:1313/tags/swarm/</link>
+      <pubDate>Fri, 15 Apr 2016 09:01:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/swarm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gmail</title>
+      <link>http://localhost:1313/tags/gmail/</link>
+      <pubDate>Fri, 08 Apr 2016 08:58:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gmail/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Limit</title>
+      <link>http://localhost:1313/tags/limit/</link>
+      <pubDate>Fri, 08 Apr 2016 08:58:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/limit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Parallel</title>
+      <link>http://localhost:1313/tags/parallel/</link>
+      <pubDate>Sun, 20 Mar 2016 08:56:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/parallel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Testing</title>
+      <link>http://localhost:1313/tags/testing/</link>
+      <pubDate>Sun, 20 Mar 2016 08:56:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/testing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTTP/2</title>
+      <link>http://localhost:1313/tags/http/2/</link>
+      <pubDate>Mon, 14 Mar 2016 08:53:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/http/2/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:1313/tags/development/</link>
+      <pubDate>Sun, 14 Feb 2016 08:49:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rails</title>
+      <link>http://localhost:1313/tags/rails/</link>
+      <pubDate>Sun, 14 Feb 2016 08:49:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rails/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nginx</title>
+      <link>http://localhost:1313/tags/nginx/</link>
+      <pubDate>Sun, 31 Jan 2016 08:41:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nginx/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gradle</title>
+      <link>http://localhost:1313/tags/gradle/</link>
+      <pubDate>Sun, 20 Sep 2015 08:38:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gradle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Offline Build</title>
+      <link>http://localhost:1313/tags/offline-build/</link>
+      <pubDate>Sun, 20 Sep 2015 08:38:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/offline-build/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bundler</title>
+      <link>http://localhost:1313/tags/bundler/</link>
+      <pubDate>Sat, 04 Apr 2015 08:36:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bundler/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sun, 22 Mar 2015 08:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mobile</title>
+      <link>http://localhost:1313/tags/mobile/</link>
+      <pubDate>Sat, 28 Dec 2013 08:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mobile/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trend</title>
+      <link>http://localhost:1313/tags/trend/</link>
+      <pubDate>Sat, 28 Dec 2013 08:17:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/trend/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

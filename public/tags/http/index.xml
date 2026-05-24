@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on Random Musings</title>
+    <link>http://localhost:1313/tags/http/</link>
+    <description>Recent content in HTTP on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 09:32:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Be wary of  http/client.go</title>
+      <link>http://localhost:1313/post/be-wary-of-go-http-client/</link>
+      <pubDate>Sat, 25 Mar 2017 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/be-wary-of-go-http-client/</guid>
+      <description>&lt;p&gt;Recently, I found out an interesting problem in Go. The problem can be reduced to a simple client request to a HTTP server.&lt;/p&gt;&#xA;&lt;p&gt;Suppose we have a HTTP server, which serves only one rooted path &lt;code&gt;/foo/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;package main&#xA;&#xA;import (&#xA;&#x9;&amp;quot;io&amp;quot;&#xA;&#x9;&amp;quot;log&amp;quot;&#xA;&#x9;&amp;quot;net/http&amp;quot;&#xA;&#x9;&amp;quot;net/http/httputil&amp;quot;&#xA;)&#xA;&#xA;func handleFoo(w http.ResponseWriter, req *http.Request) {&#xA;&#x9;// request details&#xA;&#x9;dump, _ := httputil.DumpRequest(req, true)&#xA;&#x9;log.Println(string(dump))&#xA;&#xA;&#x9;if auth := req.Header.Get(&amp;quot;Authorization&amp;quot;); auth != &amp;quot;Bearer GoodToken&amp;quot; {&#xA;&#x9;&#x9;http.Error(w, &amp;quot;401 Unauthorized&amp;quot;, http.StatusUnauthorized)&#xA;&#x9;&#x9;return&#xA;&#x9;}&#xA;&#xA;&#x9;io.WriteString(w, &amp;quot;Hello World!&amp;quot;)&#xA;}&#xA;&#xA;func main() {&#xA;&#x9;http.HandleFunc(&amp;quot;/foo/&amp;quot;, handleFoo)&#xA;&#x9;log.Fatal(http.ListenAndServe(&amp;quot;:12345&amp;quot;, nil))&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;code&gt;handleFoo&lt;/code&gt; simplily verifies that correct token is sent in the &lt;code&gt;Authorization&lt;/code&gt; header. Otherwise, it returns &lt;code&gt;401 Unauthorized&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HTTP/2</title>
+      <link>http://localhost:1313/post/http2/</link>
+      <pubDate>Mon, 14 Mar 2016 08:53:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/http2/</guid>
+      <description>&lt;h3 id=&#34;what-is-http2-and-why&#34;&gt;What is HTTP/2 and Why&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc2068&#34;&gt;HTTP/1.1&lt;/a&gt; has been serving most part of the Web since 1997. As websites get more and more sophisticated and resource intensive, it starts to show its limitations, e.g. one outstanding request per TCP connection. So its next-generation emerged: &lt;a href=&#34;http://http2.github.io/&#34;&gt;HTTP/2&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://http2.github.io/faq/&#34;&gt;HTTP/2 FAQ&lt;/a&gt; does a great job explaining the background and specifications. Highly recommended. Here is an executive summary, HTTP/2:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;is specifically designed to improve performance&lt;/li&gt;&#xA;&lt;li&gt;is based on &lt;a href=&#34;http://tools.ietf.org/html/draft-mbelshe-httpbis-spdy-00&#34;&gt;SPDY&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;is binary, instead of textual&lt;/li&gt;&#xA;&lt;li&gt;is fully multiplexed, instead of ordered and blocking&lt;/li&gt;&#xA;&lt;li&gt;can therefore use one connection for parallelism&lt;/li&gt;&#xA;&lt;li&gt;uses header compression to reduce overhead&lt;/li&gt;&#xA;&lt;li&gt;allows servers to push responses proactively into client caches&lt;/li&gt;&#xA;&lt;li&gt;is backward-compatible, designed to be drop-in replacement for HTTP/1.1&lt;/li&gt;&#xA;&lt;li&gt;is &lt;a href=&#34;http://caniuse.com/#search=http%2F2&#34;&gt;supported by most broswers over TLS&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;HttpWatch  &lt;a href=&#34;https://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-spdy-and-http2/&#34;&gt;reported&lt;/a&gt; good performance improvement by using HTTP/2.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HTTP/2</title>
+      <link>http://localhost:1313/post/http2/</link>
+      <pubDate>Mon, 14 Mar 2016 08:53:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/http2/</guid>
+      <description>&lt;h3 id=&#34;what-is-http2-and-why&#34;&gt;What is HTTP/2 and Why&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc2068&#34;&gt;HTTP/1.1&lt;/a&gt; has been serving most part of the Web since 1997. As websites get more and more sophisticated and resource intensive, it starts to show its limitations, e.g. one outstanding request per TCP connection. So its next-generation emerged: &lt;a href=&#34;http://http2.github.io/&#34;&gt;HTTP/2&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://http2.github.io/faq/&#34;&gt;HTTP/2 FAQ&lt;/a&gt; does a great job explaining the background and specifications. Highly recommended. Here is an executive summary, HTTP/2:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;is specifically designed to improve performance&lt;/li&gt;&#xA;&lt;li&gt;is based on &lt;a href=&#34;http://tools.ietf.org/html/draft-mbelshe-httpbis-spdy-00&#34;&gt;SPDY&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;is binary, instead of textual&lt;/li&gt;&#xA;&lt;li&gt;is fully multiplexed, instead of ordered and blocking&lt;/li&gt;&#xA;&lt;li&gt;can therefore use one connection for parallelism&lt;/li&gt;&#xA;&lt;li&gt;uses header compression to reduce overhead&lt;/li&gt;&#xA;&lt;li&gt;allows servers to push responses proactively into client caches&lt;/li&gt;&#xA;&lt;li&gt;is backward-compatible, designed to be drop-in replacement for HTTP/1.1&lt;/li&gt;&#xA;&lt;li&gt;is &lt;a href=&#34;http://caniuse.com/#search=http%2F2&#34;&gt;supported by most broswers over TLS&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;HttpWatch  &lt;a href=&#34;https://blog.httpwatch.com/2015/01/16/a-simple-performance-comparison-of-https-spdy-and-http2/&#34;&gt;reported&lt;/a&gt; good performance improvement by using HTTP/2.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

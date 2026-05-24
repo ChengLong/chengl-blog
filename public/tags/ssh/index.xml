@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on Random Musings</title>
+    <link>http://localhost:1313/tags/ssh/</link>
+    <description>Recent content in Ssh on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 09:24:30 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speed Up SSH</title>
+      <link>http://localhost:1313/post/speed-up-ssh/</link>
+      <pubDate>Sun, 04 Dec 2016 09:23:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/speed-up-ssh/</guid>
+      <description>&lt;p&gt;Recently I worked on a project where executing remote commands is very slow to start. This is expected because an SSH connection has to be established first.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ time ssh server exit&#xA;ssh server exit  0.04s user 0.01s system 0% cpu 7.901 total&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;It took nearly &lt;strong&gt;8&lt;/strong&gt; seconds to ssh into &lt;code&gt;server&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;That&amp;rsquo;s slow!&lt;/p&gt;&#xA;&lt;p&gt;After a bit of googling, there is an elegant way to speed this up. Simply put this at the bottom of your &lt;code&gt;~/.ssh/config&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

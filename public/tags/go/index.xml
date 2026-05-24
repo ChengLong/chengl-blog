@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Random Musings</title>
+    <link>http://localhost:1313/tags/go/</link>
+    <description>Recent content in Go on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 09:32:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Be wary of  http/client.go</title>
+      <link>http://localhost:1313/post/be-wary-of-go-http-client/</link>
+      <pubDate>Sat, 25 Mar 2017 09:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/be-wary-of-go-http-client/</guid>
+      <description>&lt;p&gt;Recently, I found out an interesting problem in Go. The problem can be reduced to a simple client request to a HTTP server.&lt;/p&gt;&#xA;&lt;p&gt;Suppose we have a HTTP server, which serves only one rooted path &lt;code&gt;/foo/&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;package main&#xA;&#xA;import (&#xA;&#x9;&amp;quot;io&amp;quot;&#xA;&#x9;&amp;quot;log&amp;quot;&#xA;&#x9;&amp;quot;net/http&amp;quot;&#xA;&#x9;&amp;quot;net/http/httputil&amp;quot;&#xA;)&#xA;&#xA;func handleFoo(w http.ResponseWriter, req *http.Request) {&#xA;&#x9;// request details&#xA;&#x9;dump, _ := httputil.DumpRequest(req, true)&#xA;&#x9;log.Println(string(dump))&#xA;&#xA;&#x9;if auth := req.Header.Get(&amp;quot;Authorization&amp;quot;); auth != &amp;quot;Bearer GoodToken&amp;quot; {&#xA;&#x9;&#x9;http.Error(w, &amp;quot;401 Unauthorized&amp;quot;, http.StatusUnauthorized)&#xA;&#x9;&#x9;return&#xA;&#x9;}&#xA;&#xA;&#x9;io.WriteString(w, &amp;quot;Hello World!&amp;quot;)&#xA;}&#xA;&#xA;func main() {&#xA;&#x9;http.HandleFunc(&amp;quot;/foo/&amp;quot;, handleFoo)&#xA;&#x9;log.Fatal(http.ListenAndServe(&amp;quot;:12345&amp;quot;, nil))&#xA;}&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;&lt;code&gt;handleFoo&lt;/code&gt; simplily verifies that correct token is sent in the &lt;code&gt;Authorization&lt;/code&gt; header. Otherwise, it returns &lt;code&gt;401 Unauthorized&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

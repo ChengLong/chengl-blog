@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Speed up bundle install"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Speed up bundle install &middot; Random Musings" />
+  	<meta property="og:site_name" content="Random Musings" />
+  	<meta property="og:url" content="http://localhost:1313/post/speed-up-bundle-install/" />
+
+    
+        
+            <meta property="og:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2015-04-04T08:36:00Z" />
+
+    
+    <meta property="article:tag" content="bundler" />
+    
+    <meta property="article:tag" content="Ruby" />
+    
+    
+
+    <title>Speed up bundle install &middot; Random Musings</title>
+
+    
+    <meta name="description" content="&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt; Next time, when you need &lt;code&gt;bundle install&lt;/code&gt;, do &lt;code&gt;bundle install --jobs X&lt;/code&gt;, where &lt;strong&gt;X&lt;/strong&gt; is the number " />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Random Musings" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.161.1">
+
+    <link rel="canonical" href="http://localhost:1313/post/speed-up-bundle-install/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Speed up bundle install",
+    "name": "Speed up bundle install",
+    "wordCount":  173 ,
+    "timeRequired": "PT1M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "http://localhost:1313/post/speed-up-bundle-install/",
+    "datePublished": "2015-04-04T08:36Z",
+    "dateModified": "2017-07-30T08:37Z",
+    
+    "keywords": "bundler, Ruby",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:1313/post/speed-up-bundle-install/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="http://localhost:1313/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Speed up bundle install</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2015-04-04T08:36:00Z">
+            Apr 4, 2015
+          </time>
+        
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/bundler/">#bundler</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/ruby/">#Ruby</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p><strong>TL;DR</strong> Next time, when you need <code>bundle install</code>, do <code>bundle install --jobs X</code>, where <strong>X</strong> is the number of your machine cores. It will save you huge amount of time.</p>
+<p><a href="http://archlever.blogspot.sg/2013/09/lies-damned-lies-and-truths-backed-by.html">Some blog</a> suggests that setting the number of jobs to <strong>X-1</strong> is statistically better than <strong>X</strong>. But that is not true anymore, at least with bundler &gt;= 1.7.12. To prove this, I tested it on a large Rails project (<a href="https://github.com/discourse/discourse">discourse</a>) on my Mid 2012 MBP with 2.6 GHz Intel Core i7. Below is my test result:</p>
+<ul>
+<li><code>bundle install</code> takes <strong>13 mins and 45 seconds</strong></li>
+<li><code>bundle install --jobs 7</code> takes <strong>3 mins and 51 seconds</strong></li>
+<li><code>bundle install --jobs 8</code> takes <strong>3 mins and 47 seconds</strong></li>
+</ul>
+<p>Although the difference between 7 and 8 jobs is not big, using more jobs is still faster. <a href="http://blog.mroth.info/blog/2014/10/02/rubygems-bundler-they-took-our-jobs/">Other benchmark</a> has similar result.</p>
+<p>To save some typing, I would recommend configing this option globally on your machine, e.g. <code>bundle config --global jobs X</code>. After this, you only need to do <code>bundle install</code></p>
+<p>Life is too short. Speed up <code>bundle install</code>.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="http://localhost:1313/">Cheng Long</a></h4>
+  
+  <p>Read <a href="http://localhost:1313/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Speed%20up%20bundle%20install&nbsp;-&nbsp;Random%20Musings&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fspeed-up-bundle-install%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2fspeed-up-bundle-install%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fspeed-up-bundle-install%2f&amp;description=Speed%20up%20bundle%20install"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fspeed-up-bundle-install%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="background-image: url(/content/images/2017/07/gradle-logo.png)" href="http://localhost:1313/post/gradle-offline-build/">
+          <section class="post">
+              <h2>Gradle Offline Build</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="background-image: url(/content/images/2017/07/Git-Logo-1788C.png)" href="http://localhost:1313/post/less-frequently-used-git-commands/">
+          <section class="post">
+              <h2>Less frequently used git commands</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Random Musings</a> Cheng Long</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>
+

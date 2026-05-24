@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Random Musings</title>
+    <link>http://localhost:1313/tags/git/</link>
+    <description>Recent content in Git on Random Musings</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>Cheng Long</copyright>
+    <lastBuildDate>Sun, 30 Jul 2017 08:34:26 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Less frequently used git commands</title>
+      <link>http://localhost:1313/post/less-frequently-used-git-commands/</link>
+      <pubDate>Sun, 22 Mar 2015 08:30:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/less-frequently-used-git-commands/</guid>
+      <description>&lt;p&gt;From time to time, I find myself or my peers not using git correctly or efficiently. This is largely due to the fact that some git commands are less well known and used. Below are a few commands that could be helpful but less frequently used.&lt;/p&gt;&#xA;&lt;h4 id=&#34;git-bisect&#34;&gt;git bisect&lt;/h4&gt;&#xA;&lt;p&gt;Suppose you find that commit &lt;code&gt;c100&lt;/code&gt; is failing your tests. But it was running fine at commit &lt;code&gt;c67&lt;/code&gt;. You want to know which commit in the range (&lt;code&gt;c67&lt;/code&gt;, &lt;code&gt;c100&lt;/code&gt;] introduced the bug.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

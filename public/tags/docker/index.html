@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    <meta name="twitter:card" content="summary"/>
+    
+    <meta name="twitter:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+    
+
+
+
+<meta name="twitter:title" content="Docker"/>
+<meta name="twitter:description" content="Random Musings by Cheng Long"/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Docker &middot; Random Musings" />
+  	<meta property="og:site_name" content="Random Musings" />
+  	<meta property="og:url" content="http://localhost:1313/tags/docker/" />
+
+    
+        
+            <meta property="og:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Random Musings by Cheng Long" />
+    
+
+    <title>Docker &middot; Random Musings</title>
+
+    
+    <meta name="description" content="Random Musings by Cheng Long" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Random Musings" />
+      
+      
+        <link href="http://localhost:1313/tags/docker/index.xml" rel="alternate" type="application/rss+xml" title="Docker &middot; Random Musings" />
+      
+    
+    <meta name="generator" content="Hugo 0.161.1">
+
+    <link rel="canonical" href="http://localhost:1313/tags/docker/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "url": "http://localhost:1313/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:1313/"
+    },
+    "description": "Random Musings by Cheng Long"
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/tags/docker/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+	 
+  <header class="main-header tag-head" style="background-image: url(/content/images/2020/07/IMG_1448.jpg)">
+  
+
+    <nav class="main-nav overlay clearfix">
+      
+      
+        
+          <a class="menu-button icon-feed" href="http://localhost:1313/tags/docker/index.xml">&nbsp;&nbsp;Subscribe</a>
+        
+      
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">Docker</h1>
+            <h2 class="page-description">
+                
+            </h2>
+        </div>
+    </div>
+</header>
+
+<main class="content" role="main">
+    
+
+	<div class="extra-pagination inner">
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+	</div>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/working-with-multiple-projects-on-gke/">Keeping configurations sane for multiple projects on Google Container Engine</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>In my <a href="https://chengl.com/kubectl-authentication-made-simple/">previous post</a>, I present the easist and most secure way to get <code>kubectl</code> working for one project. But what about mutiple projects? Juggle mutiple projects on Google Container Engine (GKE) can be hard, especially when its configurations are admittedly <a href="https://github.com/kubernetes/kubernetes/issues/20605">quirky</a>. This post describes the best practice, in my opinion, to keep configurations sane and easy to switch.</p>
+<h2 id="problem">Problem</h2>
+<p>Suppose you have an awesome app that runs on GKE. You probably want to have two different environments <code>staging</code> and <code>production</code>, and the environments should be completely isolated. So you create two projects on GKE, <code>awesome-app-staging</code> and <code>awesome-app-production</code>, and provisioned resources for each. Now the question is how to effectively switch between the two projects on command line without repeating <a href="https://github.com/kubernetes/kubernetes/issues/20605#issuecomment-218322105">these commands</a> over and over again.</p> <a class="read-more" href="http://localhost:1313/post/working-with-multiple-projects-on-gke/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/kubernetes/">#Kubernetes</a>,
+            
+                <a href="http://localhost:1313//tags/gke/">#GKE</a>,
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+        
+        <time class="post-date" datetime="2017-02-18T09:27:00Z">
+            18 Feb 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/docker-workflow/">Docker Workflow</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>In my previous posts, I demoed how to orchestrate Docker with <a href="https://chengl.com/orchestrating-docker-using-swarm/">Swarm</a> and <a href="https://chengl.com/orchestrating-docker-with-kubernetes/">Kubernetes</a>. They all assume the Docker image <a href="https://hub.docker.com/r/chenglong/simple-node/">chenglong/simple-node</a> is already there and ready to be deployed. But how to develop that image in the first place? How to streamline and automate the process of developing it on local machine, building and testing it on Continuous Integration (CI) server, and finally deploying to production?</p>
+<p>This post introduces one possible Docker workflow.</p> <a class="read-more" href="http://localhost:1313/post/docker-workflow/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/workflow/">#Workflow</a>,
+            
+                <a href="http://localhost:1313//tags/continuous-integration/">#Continuous Integration</a>,
+            
+                <a href="http://localhost:1313//tags/continuous-delivery/">#Continuous Delivery</a>,
+            
+        
+        <time class="post-date" datetime="2016-05-25T09:07:00Z">
+            25 May 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/orchestrating-docker-with-kubernetes/">Orchestrating Docker with Kubernetes</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>This is my second post on Docker orchestration. In <a href="https://chengl.com/orchestrating-docker-using-swarm/">the first post</a>, I demonstrated orchestrating Docker with Swarm, Machine, Compose and Consul. This post is to demonstrate orchestrating the same app with Kubernetes and draw comparisons between them. I recommend reading <a href="https://chengl.com/orchestrating-docker-using-swarm/">that post</a> before this.</p>
+<h3 id="introduction-to-kubernetes">Introduction to Kubernetes</h3>
+<blockquote>
+<p>Kubernetes is an open-source system for automating deployment, operations, and scaling of containerized applications.</p>
+</blockquote>
+<blockquote>
+<p>It groups containers that make up an application into logical units for easy management and discovery. Kubernetes builds upon <a href="http://queue.acm.org/detail.cfm?id=2898444">a decade and a half of experience of running production workloads at Google</a>, combined with best-of-breed ideas and practices from the community.</p> <a class="read-more" href="http://localhost:1313/post/orchestrating-docker-with-kubernetes/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/orchestration/">#Orchestration</a>,
+            
+                <a href="http://localhost:1313//tags/kubernetes/">#Kubernetes</a>,
+            
+        
+        <time class="post-date" datetime="2016-05-15T09:04:00Z">
+            15 May 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/orchestrating-docker-using-swarm/">Orchestrating Docker with Swarm, Machine, Compose and Consul</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><p>With <a href="https://blog.docker.com/2015/11/docker-multi-host-networking-ga/">multi-host networking ready for production</a> and <a href="https://blog.docker.com/2015/11/swarm-1-0/">the announcement of Swarm 1.0</a>, I think it&rsquo;s time to give Docker a serious try. This post details the steps I took to orchestrate a multi-host and multi-container app.</p>
+<h3 id="architecture">Architecture</h3>
+<p><img src="http://localhost:1313/content/images/2017/07/Screen-Shot-2016-04-15-at-12-57-55-AM.png" alt="Screen-Shot-2016-04-15-at-12-57-55-AM"></p>
+<p>This is a simple Node app that uses Redis as database, load balanced by Nginx. Each blue box is a Docker host, which runs several containers. All hosts talk to Consul for service discovery. The cluster has 5 nodes, each serves a specific purpose. We want to easily scale up and down the number of <code>app</code> containers.</p> <a class="read-more" href="http://localhost:1313/post/orchestrating-docker-using-swarm/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/orchestration/">#Orchestration</a>,
+            
+                <a href="http://localhost:1313//tags/swarm/">#Swarm</a>,
+            
+                <a href="http://localhost:1313//tags/consul/">#Consul</a>,
+            
+        
+        <time class="post-date" datetime="2016-04-15T09:01:00Z">
+            15 Apr 2016
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="http://localhost:1313/post/using-docker-for-rails-development/">Using Docker for Rails Development</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p><h3 id="why">Why</h3>
+<p>There are many use cases of Docker. I see people primarily using it for Continous Integration and deployment. But Docker is also good for development. The obvious advantages of using Docker for development are:</p>
+<ul>
+<li>No need to install app dependencies on dev machines. App dependencies are built into Docker images. Hence, the dev machines are not messed up with crazy dependencies. The only dependency needed on dev machines is Docker, nothing else.</li>
+<li>Have a consistent development environment for all developers. No more excuse like &ldquo;<strong>It works on my machine</strong>&rdquo;!</li>
+<li>Onboard new developers quickly. No need to spend hours setting up new dev machine and configuring it. You only need <code>docker-compose up</code> and you can start coding.</li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>This post will show you how to setup a Ruby on Rails development environment using Docker. My dev machine has</p> <a class="read-more" href="http://localhost:1313/post/using-docker-for-rails-development/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            
+            
+            Cheng Long
+                 
+        
+
+        on
+            
+                <a href="http://localhost:1313//tags/docker/">#Docker</a>,
+            
+                <a href="http://localhost:1313//tags/rails/">#Rails</a>,
+            
+                <a href="http://localhost:1313//tags/development/">#Development</a>,
+            
+        
+        <time class="post-date" datetime="2016-02-14T08:49:00Z">
+            14 Feb 2016
+        </time>
+    </footer>
+</article>
+
+	
+
+	<nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+</main>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Random Musings</a> Cheng Long</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>

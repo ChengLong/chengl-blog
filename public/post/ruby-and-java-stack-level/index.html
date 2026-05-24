@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Ruby and Java Stack Level"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Ruby and Java Stack Level &middot; Random Musings" />
+  	<meta property="og:site_name" content="Random Musings" />
+  	<meta property="og:url" content="http://localhost:1313/post/ruby-and-java-stack-level/" />
+
+    
+        
+            <meta property="og:image" content="/content/images/2020/07/IMG_1448.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2016-11-05T09:17:00Z" />
+
+    
+    <meta property="article:tag" content="Ruby" />
+    
+    <meta property="article:tag" content="Java" />
+    
+    <meta property="article:tag" content="recursion" />
+    
+    
+
+    <title>Ruby and Java Stack Level &middot; Random Musings</title>
+
+    
+    <meta name="description" content="&lt;p&gt;While coding for an algorithmic problem, I discovered that Ruby&amp;rsquo;s stack level is much shallower than Java. This caused a recursive DFS solution written" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="http://localhost:1313/css/nav.css" />
+
+    
+
+    
+
+    
+      
+          <link href="http://localhost:1313/index.xml" rel="alternate" type="application/rss+xml" title="Random Musings" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.161.1">
+
+    <link rel="canonical" href="http://localhost:1313/post/ruby-and-java-stack-level/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name":  null 
+    },
+    "author": {
+        "@type": "Person",
+        "name":  null ,
+        
+        "url":  null ,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ]
+    },
+    "headline": "Ruby and Java Stack Level",
+    "name": "Ruby and Java Stack Level",
+    "wordCount":  521 ,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "http://localhost:1313/post/ruby-and-java-stack-level/",
+    "datePublished": "2016-11-05T09:17Z",
+    "dateModified": "2017-07-30T09:22Z",
+    
+    "keywords": "Ruby, Java, recursion",
+    "description": "",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:1313/post/ruby-and-java-stack-level/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="http://localhost:1313/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button icon-feed" href="http://localhost:1313/index.xml" >&nbsp;&nbsp;Subscribe</a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Ruby and Java Stack Level</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2016-11-05T09:17:00Z">
+            Nov 5, 2016
+          </time>
+        
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/ruby/">#Ruby</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/java/">#Java</a></span>
+         
+          <span class="post-tag small"><a href="http://localhost:1313//tags/recursion/">#recursion</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>While coding for an algorithmic problem, I discovered that Ruby&rsquo;s stack level is much shallower than Java. This caused a recursive DFS solution written in Ruby failed due to <code>stack level too deep (SystemStackError)</code>, while the same code written in Java passed. Whether recursion or tail recursion should be used is not the point of this post. This post is to find out what the max stack level is and what limits the stack level.</p>
+<h2 id="ruby">Ruby</h2>
+<p>Consider the following code</p>
+<pre><code>def recurse(n)
+  return 1 if n == 1
+  1 + recurse(n-1)
+end
+
+def binary_search
+  answer, a, b = 0, 0, 1_000_000_000
+
+  while a&lt;=b
+    mid = (a+b)/2
+    begin
+      recurse(mid)
+      answer = mid
+      a = mid + 1
+    rescue SystemStackError
+      b = mid - 1
+    end
+  end
+
+  answer
+end
+
+puts &quot;Max Stack Level: #{binary_search}&quot;
+</code></pre>
+<p>What do you think <code>Max Stack Level</code> is?</p>
+<p>Running the code reports that the the <code>Max Stack Level</code> is <strong>10080</strong> on my MBP. This is because the stack size of the default Ruby 2.3.1 VM (MRI) is limited to <strong>1MB</strong>.</p>
+<p>This is very limiting for even a medium-sized dataset. To increase it, one can <a href="http://magazine.rubyist.net/?Ruby200SpecialEn-note#l16">specify VM stack size</a> for Ruby &gt;= 2.0.0. To check current max stack size, open <code>irb</code></p>
+<pre><code>irb(main):001:0&gt; RubyVM::DEFAULT_PARAMS
+{
+         :thread_vm_stack_size =&gt; 1048576,
+    :thread_machine_stack_size =&gt; 1048576,
+          :fiber_vm_stack_size =&gt; 131072,
+     :fiber_machine_stack_size =&gt; 524288
+}
+</code></pre>
+<p>Let&rsquo;s set <code>RUBY_THREAD_VM_STACK_SIZE</code> to 2MB</p>
+<pre><code>export RUBY_THREAD_VM_STACK_SIZE=2097152
+</code></pre>
+<p>And running the same code again returns <code>Max Stack Level:  20162</code>, which is roughly 2 * <strong>10080</strong>. Setting <code>RUBY_THREAD_VM_STACK_SIZE</code> to 3MB will increase <code>Max Stack Level</code> to <strong>30243</strong>. This proves that <code>Max Stack Level</code> is linearly proportional to <code>RUBY_THREAD_VM_STACK_SIZE</code> in Ruby.</p>
+<h2 id="java">Java</h2>
+<pre><code>public class Solution {
+    public static void main(String[] args) {
+        System.out.println(&quot;Max Stack Level: &quot; + binarySearch());
+    }
+
+    private static long binarySearch() {
+        long a = 0, b = Long.MAX_VALUE, answer = 0;
+        while (a &lt;= b) {
+            long mid = (a + b) / 2;
+            try {
+                recurse(mid);
+                answer = mid;
+                a = mid + 1;
+            } catch (StackOverflowError e) {
+                b = mid - 1;
+            }
+        }
+        return answer;
+    }
+
+    private static long recurse(long n) {
+        if (n == 1) return 1;
+        return 1 + recurse(n - 1);
+    }
+}
+</code></pre>
+<p>Running this code with</p>
+<pre><code>java Solution
+</code></pre>
+<p>returns <code>Max Stack Level: 49150</code>. This is because the thead stack size on my MBP defaults to <strong>1MB</strong>. The defaults are platform-specific, see <a href="http://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp1024112">here</a>.</p>
+<p>JVM has an option <a href="https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp999540">ss</a> for setting the thread stack size. Running the code with thread stack size of 2M</p>
+<pre><code>java -Xss2M Solution
+</code></pre>
+<p>returns <code>Max Stack Level: 98302</code>, which roughly doubled the stack level. Running it with 4MB gives <strong>196606</strong> and it matches what I thought. Therefore, in Java, <code>Max Stack Level</code> is linearly proportional to <code>ss</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Both Ruby and Java have clearly defined max stack size, which limits the number of levels code can recurse. In Ruby, it&rsquo;s defined by environment variable <code>RUBY_THREAD_VM_STACK_SIZE</code>. While in Java, it&rsquo;s defined by JVM option <code>ss</code>. A clear observation is that when given the same max stack size and the same code, Java performs much better than Ruby. This is not a surprise because Java (on JVM) is a compiled, while Ruby MRI is interpreted.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+
+<section class="author">
+  <h4><a href="http://localhost:1313/">Cheng Long</a></h4>
+  
+  <p>Read <a href="http://localhost:1313/">more posts</a> by this author.</p>
+  
+  <div class="author-meta">
+    
+    
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Ruby%20and%20Java%20Stack%20Level&nbsp;-&nbsp;Random%20Musings&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fruby-and-java-stack-level%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2fruby-and-java-stack-level%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fruby-and-java-stack-level%2f&amp;description=Ruby%20and%20Java%20Stack%20Level"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fruby-and-java-stack-level%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="http://localhost:1313/post/speed-up-ssh/">
+          <section class="post">
+              <h2>Speed Up SSH</h2>
+              
+          </section>
+      </a>
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="http://localhost:1313/post/docker-workflow/">
+          <section class="post">
+              <h2>Docker Workflow</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">Random Musings</a> Cheng Long</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="http://localhost:1313/js/index.js"></script>
+    
+</body>
+</html>
+
