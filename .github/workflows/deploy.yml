@@ -23,7 +23,7 @@ jobs:
           sudo dpkg -i hugo_extended_0.161.1_linux-amd64.deb
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify && rm -f public/index.xml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
